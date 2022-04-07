@@ -212,7 +212,6 @@ def logo():
 	auth=m+'  Created By '+k+'Sidhanie'
 	# jika ingin m3namambah kan variabel dan mengubah data variabel kitsune bisa menambahkan %s menambahkan variabel terus di ubah menjjadu string, %d = mengubah data menjadi decimal , %i = mengubah data menjadi integer
 return
-% (k,m,h,k,m,h,k,m,h,k,m,h,k,m,h,k,m,h,k,m,h,k,m,h,k,m,h,auth)
 # -----------------------------------------------------------
 def termux():
 	os.system('termux-contact-list > .contact')
